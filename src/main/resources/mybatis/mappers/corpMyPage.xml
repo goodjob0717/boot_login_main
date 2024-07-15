@@ -1,0 +1,58 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.boot.dao.CorpMyPageDAO">
+    
+    <select id="list" resultType="com.boot.dto.CorpMyPageDTO">
+        select corp_id
+			   ,corp_pw
+			   ,corp_name
+			   ,corp_email
+			   ,corp_phone
+			   ,corp_address
+			   ,epr_No
+			   ,corp_type
+			   ,corp_boss
+			  from corp_mem
+    </select>
+    
+    <select id="list_corp" resultType="com.boot.dto.CorpMyPageDTO">
+        select e1. corp_id
+			   ,e1. corp_pw
+			   ,e1. corp_name
+			   ,e1. corp_email
+			   ,e1. corp_phone
+			   ,e1. corp_address
+			   ,e1. epr_No
+			   ,e1. corp_type
+			   ,e1. corp_boss
+			   ,e2. emp_title
+			   ,e2. emp_postNo
+			   ,e2. emp_startDate
+			  from corp_mem e1 join empPost e2
+			  on e1.corp_id = e2.corp_id
+    </select>
+    
+    
+    <delete id="delete">
+		delete from empPost where corp_id=#{corp_id} and emp_postNo=#{emp_postNo}
+    </delete>
+    
+    <update id="modify">
+		update corp_mem set corp_pw=#{cont_mypageEdit_PWD}, corp_phone=#{cont_mypageEdit_phoneNumber}, corp_email=#{cont_mypageEdit_email}, corp_address=#{cont_mypageEdit_address}, epr_No=#{cont_mypageEdit_eprNo}, corp_boss=#{cont_mypageEdit_boss} where corp_id=corp_id
+    </update>
+    
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

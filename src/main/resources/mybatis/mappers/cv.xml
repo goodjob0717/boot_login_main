@@ -1,0 +1,96 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.boot.dao.CVDAO">
+	<insert id="write">
+ 	<selectKey keyProperty="cv_no" order="BEFORE" resultType="int">
+    select ifnull(max(cv_no),0)+1 from cv
+ 	</selectKey>
+		insert into cv (
+		    cv_no, cv_title, cv_name, cv_birth, cv_sex, cv_email, cv_phone, cv_address, cv_photo, cv_selfIntro,
+		    e_school, e_hi_name, e_hi_endMon, e_hi_status, e_uni_name, e_uni_startMon, e_uni_endMon, e_major, e_credit, e_score, e_uni_status,
+		    c_corpName, c_dept, c_startMon, c_endMon, c_position, c_duty, c_salary, c_assignedTask,
+		    a_corpName, a_startMon, a_endMon, a_content, a_activitySort,
+		    p_name, p_date, p_corp,
+		    l_name, l_institution, l_passMon,
+		    t_name, t_institution, t_startMon, t_endMon, t_content,
+		    po_sort, po_url
+		) values (
+		    #{cv_no}, #{cv_title}, #{cv_name}, #{cv_birth}, #{cv_sex}, #{cv_email}, #{cv_phone}, #{cv_address}, #{cv_photo}, #{cv_selfIntro},
+		    #{e_school}, #{e_hi_name}, #{e_hi_endMon}, #{e_hi_status}, #{e_uni_name}, #{e_uni_startMon}, #{e_uni_endMon}, #{e_major}, #{e_credit}, #{e_score}, #{e_uni_status},
+		    #{c_corpName}, #{c_dept}, #{c_startMon}, #{c_endMon}, #{c_position}, #{c_duty}, #{c_salary}, #{c_assignedTask},
+		    #{a_corpName}, #{a_startMon}, #{a_endMon}, #{a_content}, #{a_activitySort},
+		    #{p_name}, #{p_date}, #{p_corp},
+		    #{l_name}, #{l_institution}, #{l_passMon},
+		    #{t_name}, #{t_institution}, #{t_startMon}, #{t_endMon}, #{t_content},
+		    #{po_sort}, #{po_url}
+		    )
+	</insert>
+	
+	<select id="contentView" resultType="com.boot.dto.CVDTO">
+        select
+			cv_no, cv_title, cv_name, cv_birth, cv_sex, cv_email, cv_phone, cv_address, cv_photo, cv_selfIntro,
+			e_school, e_hi_name, e_hi_endMon, e_hi_status, e_uni_name, e_uni_startMon, e_uni_endMon, e_major, e_credit, e_score, e_uni_status,
+			c_corpName, c_dept, c_startMon, c_endMon, c_position, c_duty, c_salary, c_assignedTask,
+			a_corpName, a_startMon, a_endMon, a_content, a_activitySort,
+			p_name, p_date, p_corp,
+			l_name, l_institution, l_passMon,
+			t_name, t_institution, t_startMon, t_endMon, t_content,
+			po_sort, po_url
+		from cv
+		where cv_no = ${cv_no}
+    </select>
+	
+	
+	<update id="modify">
+		update cv
+  			set cv_title = #{cv_title},
+			    cv_name = #{cv_name},
+			    cv_birth = #{cv_birth},
+			    cv_sex = #{cv_sex},
+			    cv_email = #{cv_email},
+			    cv_phone = #{cv_phone},
+			    cv_address = #{cv_address},
+			    cv_photo = #{cv_photo},
+			    cv_selfIntro = #{cv_selfIntro},
+			    e_school = #{e_school},
+			    e_hi_name = #{e_hi_name},
+			    e_hi_endMon = #{e_hi_endMon},
+			    e_hi_status = #{e_hi_status},
+			    e_uni_name = #{e_uni_name},
+			    e_uni_startMon = #{e_uni_startMon},
+			    e_uni_endMon = #{e_uni_endMon},
+			    e_major = #{e_major},
+			    e_credit = #{e_credit},
+			    e_score = #{e_score},
+			    e_uni_status = #{e_uni_status},
+			    c_corpName = #{c_corpName},
+			    c_dept = #{c_dept},
+			    c_startMon = #{c_startMon},
+			    c_endMon = #{c_endMon},
+			    c_position = #{c_position},
+			    c_duty = #{c_duty},
+			    c_salary = #{c_salary},
+			    c_assignedTask = #{c_assignedTask},
+			    a_corpName = #{a_corpName},
+			    a_startMon = #{a_startMon},
+			    a_endMon = #{a_endMon},
+			    a_content = #{a_content},
+			    a_activitySort = #{a_activitySort},
+			    p_name = #{p_name},
+			    p_date = #{p_date},
+			    p_corp = #{p_corp},
+			    l_name = #{l_name},
+			    l_institution = #{l_institution},
+			    l_passMon = #{l_passMon},
+			    t_name = #{t_name},
+			    t_institution = #{t_institution},
+			    t_startMon = #{t_startMon},
+			    t_endMon = #{t_endMon},
+			    t_content = #{t_content},
+			    po_sort = #{po_sort},
+			    po_url = #{po_url}
+			where user_id = user_id and cv_no = cv_no
+	</update>
+</mapper>

@@ -1,0 +1,30 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--나상엽-->
+<mapper namespace="com.boot.dao.PageDAO">
+
+    <select id="listWithPaging" resultType="com.boot.dto.CorpInfoDTO">
+    <![CDATA[ 
+		select rownum, corpInfo_No, corp_name, corp_type
+			from (select rownum, corpInfo_No, corp_name, corp_type 
+			from (select row_number() over(order by corpInfo_No desc) as rownum
+										,corpInfo_No
+										,corp_name
+										,corp_type 
+									  from company_list
+									  order by corpInfo_No desc) a
+			where rownum <= (#{pageNum} * #{amount})
+				)aa
+		where rownum > (#{pageNum}-1) * #{amount} 
+		]]>
+    </select>
+    
+    <select id="corpKeywordsList" resultType="com.boot.dto.CorpInfoDTO">
+		select corp_keyword from corp_keywordList where corp_name = #{corp_name};
+    </select>
+    
+    <select id="getTotalCount" resultType="int">
+		select count(*) from company_list
+    </select>
+</mapper>

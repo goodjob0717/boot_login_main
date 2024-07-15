@@ -1,0 +1,148 @@
+
+		body {
+			background-color: #F0F8FF;
+		}
+		.content {
+			width: 60%; /* Adjust width as needed */
+			margin: 0 auto; /* Center the container horizontally */
+    		padding-left: 200px; /* Add padding for sidebar */
+		}
+		.hidden {
+		            display: none;
+		        }
+		.sidebar {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 200px; /* 사이드바 너비 */
+			height: 100%;
+			background-color: #2b60de;
+			color: white;
+			padding-top: 20px;
+		}
+		.sidebar a {
+			display: block;
+			color: white;
+			padding: 10px 15px;
+			text-decoration: none;
+		}
+		.sidebar a:hover {
+			background-color: #737ca1;
+		}
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			background-color: #ffffff;
+			text-align: center;
+		}
+		td {
+			/* width: 25%; 모든 열의 너비를 동일하게 설정 */
+			box-sizing: border-box;
+			padding: 5px; /* padding 추가 */
+			border: 1px solid black;
+		}
+		input {
+			width: 100%;
+		}
+		.left {
+			text-align: left;
+		}
+		.auto-resize { /*활동내역 사이즈*/
+			width: 100%;
+			height: 100px;
+			box-sizing: border-box;
+			resize: none; /* 기본 리사이즈 기능 비활성화 */
+			overflow: hidden; /* 초과되는 내용 숨기기 */
+		}
+		.red-star {
+   		color: red;
+		}
+		#cv_title {
+			font-size: 40px;
+			font-weight: bold;
+		}
+		.container {
+		    /* width: 1000px; */
+		    margin: 0 auto;
+		    padding: 20px;
+		    background-color: #ffffff;
+		    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		.write-container {
+		    border: 1px solid #b1b1b1;
+		    padding: 30px;
+		    border-radius: 10px;
+		    margin-bottom: 20px;
+		    margin-top: 40px;
+		}
+		.review-keysearch {
+		    margin-bottom: 20px;
+		}
+		.review-keysearch .keywords {
+		    display: flex;
+		    flex-wrap: wrap;
+		    border: 1px solid #ddd;
+		    padding: 10px;
+		    border-radius: 5px;
+		    background-color: #f9f9f9;
+		}
+		.keywords {
+			display: flex;
+			flex-wrap: wrap; /* 필요에 따라 줄 바꿈을 허용 */
+			gap: 10px; /* 항목 간의 간격 */
+		}
+		.keywords div {
+		    margin: 5px;
+		    padding: 5px 10px;
+		    border: 1px solid #ddd;
+		    border-radius: 15px;
+		    cursor: pointer;
+		    background-color: #e9f4ff;
+		}
+		.keywords div.selected {
+		    background-color: #007bff;
+		    color: #fff;
+		}
+		#itemList div {
+			cursor: pointer;
+			/* padding: 5px;
+			border: 1px solid #ccc;
+			margin: 5px;
+			display: inline-block; */
+			margin: 5px;
+		    padding: 5px 10px;
+		    border: 1px solid #ddd;
+		    border-radius: 15px;
+		    cursor: pointer;
+		    background-color: #ffffff;
+		    }
+		.spring2 {
+			display: none;
+		}
+		.java2 {
+			display: none;
+		}
+		.javaScript2 {
+			display: none;
+		}
+		.python2 {
+			display: none;
+		}
+		.htmlcss2 {
+			display: none;
+		}
+		.asp2 {
+			display: none;
+		}
+		.api2 {
+			display: none;
+		}
+		.jsp2 {
+			display: none;
+		}
+		.oracle2 {
+			display: none;
+		}
+		.mysql2 {
+			display: none;
+		}

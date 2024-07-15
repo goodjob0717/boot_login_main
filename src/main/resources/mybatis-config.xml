@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <mappers>
+    
+<!--    	권혁재-->
+        <mapper resource="mybatis/mappers/company_list.xml" />
+        <mapper resource="mybatis/mappers/empPost.xml" />
+        <mapper resource="mybatis/mappers/main.xml" />
+        
+<!--        나상엽-->
+		<mapper resource="mybatis/mappers/corpMem.xml" />
+		<mapper resource="mybatis/mappers/userMem.xml" />
+		<mapper resource="mybatis/mappers/corpReview.xml" />
+		<mapper resource="mybatis/mappers/page.xml" />
+		
+<!--		마이페이지-->
+		<mapper resource="mybatis/mappers/myPage.xml" />
+		<mapper resource="mybatis/mappers/corpMyPage.xml" />		
+		<mapper resource="mybatis/mappers/cv.xml" />
+		
+    </mappers>
+</configuration>
+
+

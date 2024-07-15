@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com//css2?family=Nanum+gothic&display=swap');
+*{margin:0; padding:0;}
+body{
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size:12px;
+    line-height:18px;
+    color:#696B86;
+}
+ul{list-style:none;}
+a{text-decoration:none; color:inherit;}
+.clear:after{
+    display:block;
+    content: '';
+    clear:both;
+}
+img{vertical-align: top;}

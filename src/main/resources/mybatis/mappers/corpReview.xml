@@ -1,0 +1,21 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--나상엽-->
+<mapper namespace="com.boot.dao.CorpMemDAO">
+
+    <insert id="write">
+        insert into corp_mem(corp_id, corp_pw, corp_name, corp_type, corp_email, epr_No, corp_address)
+        			 values (#{corp_id}, #{corp_pw}, #{corp_name}, #{corp_type}, #{corp_email}, #{epr_No}, #{corp_address})
+    </insert>
+
+    <select id="loginyn" resultType="com.boot.dto.CorpMemDTO">
+    	select corp_pw from corp_mem where corp_id=#{corp_id}
+    </select>
+
+    <select id="checkCorpId" resultType="com.boot.dto.CorpMemDTO">
+    	select corp_id from corp_mem where corp_id=#{corp_id}
+    </select>
+
+</mapper>

@@ -1,0 +1,232 @@
+/* 기본 스타일 설정 */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 15px;
+    line-height: 18px;
+    color: #696B86;
+	
+	
+	margin: 0;           
+	 font-family: Arial, sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 3rem; /* 여백 설정 */
+	padding-top: 10rem; /* 헤더 높이만큼 패딩 추가 */
+	padding-bottom: 12rem; /* 푸터 높이만큼 패딩 추가 */
+	background: #F0F8FF;
+	min-height: calc(100vh - 17rem); /* 전체 높이에서 헤더와 푸터 높이만큼 빼기 */
+}
+
+/* 헤더와 푸터 고정 */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 5rem; /* 헤더 높이 */
+    background-color: rgb(240, 248, 255); /* 헤더 배경색 */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    z-index: 1000; /* 레이어 순서 조정 */
+}
+
+header img {
+    height: 80%;
+}
+
+.header-content {
+    display: flex;
+    flex: 1;
+    text-align: left;
+    font-size: 60px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-container input[type="text"] {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-right: 0;
+    flex: 1;
+}
+
+.search-container input[type="submit"] {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    margin-left: 0;
+}
+
+.search-container input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+nav {
+    position: fixed;
+    top: 5rem; /* 헤더 바로 아래에 위치 */
+    width: 100%;
+    background: white;
+    z-index: 999;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem 2rem; /* 패딩 추가하여 왼쪽과 오른쪽 여백을 만듭니다 */
+    box-sizing: border-box; /* 패딩과 테두리를 포함한 전체 너비 및 높이 계산 */
+}
+
+/*.submenu-back:hover {*/
+/*    background-color: white;*/
+/*}*/
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    align-items: center; /* 수직 정렬 */
+    flex: 1; /* 링크가 나머지 영역을 차지하도록 */
+}
+
+nav ul li {
+    position: relative;
+    margin: 0 1rem;
+}
+
+nav ul li:hover .submenu {
+    display: block;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    padding: 1rem;
+    display: block;
+    transition: color 0.3s; /* 색상 변화에 부드러운 전환 추가 */
+}
+
+nav a:hover {
+    color: lightblue; /* 마우스를 올렸을 때 글자색을 변경 (예: 파란색) */
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white; /* 서브메뉴 배경색을 흰색으로 설정 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 서브메뉴에 그림자 추가 */
+    z-index: 1000; /* 레이어 순서 조정 */
+    width: 100%; /* 상위 메뉴 항목과 동일한 너비 */
+}
+
+.submenu ul {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.submenu ul li {
+    margin: 0;
+}
+
+.submenu ul li a {
+    padding: 0.5rem 1rem;
+}
+
+/* 로그인 및 회원가입 링크 스타일 */
+.nav-right {
+    display: flex; /* Flexbox로 배치 */
+    margin-left: auto; /* 왼쪽으로 밀어 오른쪽 끝으로 이동 */
+    align-items: center; /* 수직 중앙 정렬 */
+}
+
+.nav-right a {
+    text-decoration: none;
+    color: black;
+    padding: 1rem;
+    display: block;
+    font-weight: bold; /* 텍스트 강조 */
+}
+
+.nav-right a:hover {
+    color: #007BFF; /* 마우스 오버 시 색상 변경 */
+}
+
+/* 푸터 스타일 */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 12rem; /* 푸터 높이 */
+    background-color: #DCDCDC; /* 푸터 배경색 */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+/*    padding: 0 1rem;*/
+	padding: 20px; /* 패딩 */
+    box-sizing: border-box;
+    z-index: 1000; /* 레이어 순서 조정 */
+    overflow: hidden;
+	text-align: left; /* 텍스트 가운데 정렬 */
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+/*    text-align: left;*/
+    margin-left: 100px;
+    flex: 1;
+    overflow: hidden;
+}
+
+.footer-content p {
+    margin: 1px 0;
+    word-break: break-word;
+    align-self: left;
+}
+
+.footer-content a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
+.footer-content .email {
+    margin-top: 10px;
+}
+
+.footer-address {
+    text-align: left;
+/*	margin-right: 500px;*/
+}
+
+/* 페이지 콘텐츠 영역을 헤더와 푸터 사이에 배치 */
+/*.content {*/
+/*    padding-top: 5rem;  헤더 높이만큼 패딩 추가 */
+/*    padding-bottom: 12rem;  푸터 높이만큼 패딩 추가 */
+/*    background: whitesmoke;*/
+/*    min-height: calc(100vh - 17rem);  전체 높이에서 헤더와 푸터 높이만큼 빼기 */
+/*}*/

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.boot.dao.EmpPostDAO">
+    <!-- 모든 채용 공고 목록 조회 -->
+    <select id="MainEmpPost" resultType="com.boot.dto.EmpPostDTO">
+        SELECT 
+            emp_postNo, emp_career, emp_status,
+            emp_duty, emp_money, emp_stime,
+            emp_etime, emp_workPlace, emp_type,
+            emp_startDate, emp_endDate, emp_title,
+            emp_content, corpInfo
+        FROM empPost
+<!--          WHERE emp_postNo = #{empPostNo}-->
+        <!-- 필요에 따라 WHERE 절을 추가하여 필터링할 수 있습니다 -->
+    </select>
+</mapper>
+
+   <!-- 특정 채용 공고 상세 정보 조회 -->
+<!--    <select id="getEmpPostById" parameterType="int" resultType="com.boot.dto.EmpPostDTO">-->
+<!--        SELECT -->
+<!--            emp_postNo,emp_career,emp_status,-->
+<!--            emp_duty,emp_money,emp_stime,-->
+<!--            emp_etime,emp_workPlace,emp_type,-->
+<!--            emp_startDate,emp_endDate,emp_title,-->
+<!--            emp_content,corpInfo-->
+<!--        FROM empPost-->
+<!--        WHERE emp_postNo = #{empPostNo}-->
+<!--    </select>-->

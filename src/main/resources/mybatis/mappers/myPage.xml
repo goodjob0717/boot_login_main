@@ -1,0 +1,68 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.boot.dao.MyPageDAO">
+    
+    <select id="list1" resultType="com.boot.dto.MyPageDTO">
+        select user_id
+			   ,user_pw
+			   ,user_name
+			   ,user_birthNo
+			   ,user_sex
+			   ,user_email
+			   ,user_phone
+			   ,user_address
+			  from user_mem
+
+    </select>
+    
+	<select id="list_cv" resultType="com.boot.dto.MyPageDTO">
+     select e1. user_id
+		  ,e1. user_pw
+		  ,e1. user_name
+		  ,e1. user_birthNo
+		  ,e1. user_sex
+		  ,e1. user_email
+		  ,e1. user_phone
+		  ,e1. user_address
+		  ,e2. cv_no
+		  ,e2. cv_title
+		  from user_mem e1 join cv e2
+		  on e1.user_id = e2.user_id
+	</select>
+	
+	<select id="list_apply" resultType="com.boot.dto.MyPageDTO">
+     	select e1. emp_postNo
+     		  ,e1. emp_title
+     		  from empPost e1, user_mem e2
+     		  where e1.user_id = e2.user_id
+	</select>
+	
+	
+
+    <select id="contentView" resultType="com.boot.dto.MyPageDTO">
+        select cv_no from cv where user_id=#{user_id}
+    </select>
+    
+    <delete id="delete">
+		delete from cv where cv_no=#{cv_no}
+    </delete>
+    
+    <update id="modify">
+		update user_mem set user_pw=#{cont_mypageEdit_PWD}, user_phone=#{cont_mypageEdit_phoneNumber}, user_email=#{cont_mypageEdit_email}, user_address=#{cont_mypageEdit_address} where user_id=user_id
+    </update>
+    
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

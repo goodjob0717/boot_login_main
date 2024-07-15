@@ -1,0 +1,76 @@
+/*body {*/
+/*	font-family: Arial, sans-serif;*/
+/*	margin: 0;*/
+/*	padding: 0;*/
+/*	background-color: #F0F8FF;*/
+/*}  중복이라 삭제*/
+
+
+.faq-container {
+	width: 80%;
+	max-width: 900px;
+	margin: 20px auto;
+	background: white;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+	text-align: center;
+	color: #333;
+	margin-bottom: 20px;
+}
+.tabs {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+.tabs button {
+	background-color: #ddd;
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+	margin: 0 5px;
+	border-radius: 5px;
+}
+.tabs button.active {
+	background-color: #007bff;
+	color: white;
+}
+.accordion {
+	background-color: #f9f9f9;
+	color: #444;
+	cursor: pointer;
+	padding: 15px;
+	width: 100%;
+	border: none;
+	text-align: left;
+	outline: none;
+	font-size: 15px;
+	transition: background-color 0.2s ease;
+	border-bottom: 1px solid #ddd;
+	border-radius: 10px;
+}
+.accordion:hover, .accordion.active {
+	background-color: #ddd;
+}
+.accordion:after {
+	content: '\002B';
+	color: #777;
+	font-weight: bold;
+	float: right;
+	margin-left: 5px;
+}
+.accordion.active:after {
+	content: "\2212";
+}
+.panel {
+	padding: 0 18px;
+	background-color: white;
+	display: none;
+	overflow: hidden;
+}
+.panel p {
+	margin: 15px 0;
+	color: #333;
+}
