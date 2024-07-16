@@ -41,28 +41,32 @@ public class UserMemController {
 	}
 	
 	@RequestMapping("/login_yn")
-	public String login_yn(@RequestParam HashMap<String, String> param) {
-		log.info("@# login_yn");
-		
-		ArrayList<UserMemDTO> dtos = userService.loginyn(param);
-		
-		if (dtos.isEmpty()) {
-			return "redirect:login";
-		} else {
-			if (param.get("user_pw").equals(dtos.get(0).getUser_pw())) {
-				return "redirect:login_ok";
-			} else {
-				return "redirect:login";
-			}
-		}
-	}
-	
-	@RequestMapping("/login_ok")
-	public String login_ok() {
-		log.info("@# login_ok");
-		
-		return "login_ok";
-	}
+	   public String login_yn(@RequestParam HashMap<String, String> param, Model model) {
+	      log.info("@# login_yn");
+	      
+	      ArrayList<UserMemDTO> dtos = userService.loginyn(param);
+	      
+	      if (dtos.isEmpty()) {
+	         return "redirect:login";
+	      } else {
+	         if (param.get("user_pw").equals(dtos.get(0).getUser_pw())) {
+	            model.addAttribute("user_id", param.get("user_id"));
+	            
+	            log.info("@# model user_id" + model);
+	            
+	            return "main";
+	         } else {
+	            return "redirect:login";
+	         }
+	      }
+	   }
+//	
+//	@RequestMapping("/login_ok")
+//	public String login_ok() {
+//		log.info("@# login_ok");
+//		
+//		return "login_ok";
+//	}
 	
 	@RequestMapping("/register")
 	public String register(HttpServletRequest request, Model model) {

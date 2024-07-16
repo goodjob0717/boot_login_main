@@ -19,7 +19,7 @@
             </a></div>
             <h3>Good Job</h3>
             <a class="header_user_id" id="header_user_id">
-				<c:out value="${cont_mypageEdit_ID}" />님 
+				<c:out value="${cont_mypage_ID}" />님 
 			</a><!-- 여기에 사용자 아이디 받아서 올리기-->
 			<div class="user_ico">
                 <div class="user_ico_img"><img src="${pageContext.request.contextPath}/resources/img/user-icon.png"></div>
@@ -53,6 +53,7 @@
                 <c:forEach items="${list1}" var="dto">
                     <div class="cont_mypage_right">
                         <a class="cont_mypage_ID">${dto.user_id}</a><br><br>
+						<c:set var="cont_mypage_ID" value="${dto.user_id}" scope="session"/>
                         <a class="cont_mypage_sex">${dto.user_sex}</a><br><br>
                         <a class="cont_mypage_name">${dto.user_name}</a><br><br>
                         <a class="cont_mypage_birth">${dto.user_birthNo}</a><br><br>
@@ -83,7 +84,6 @@
                     <c:forEach items="${list1}" var="dto">
                         <div class="cont_mypageEdit_right">
                             <a class="cont_mypageEdit_ID">${dto.user_id}</a><br>
-							<c:set var="cont_mypageEdit_ID" value="${dto.user_id}" scope="session"/>
                             <input type="text" name="cont_mypageEdit_PWD" size="50" value="${dto.user_pw}"><br>
                             <a class="cont_mypageEdit_sex">${dto.user_sex}</a><br>
                             <a class="cont_mypageEdit_name">${dto.user_name}</a><br>

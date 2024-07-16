@@ -70,11 +70,13 @@
               <li class="nav-right">
 		
                 <!-- 혹여나 마이페이지 이동중  오류 발생시 a href방식으로 변경할수도  -->
-                <form action="main" method="get" id="myPageForm">
-<!--                <a href="myPage?user_id=${user_id}">마이페이지</a>-->
-                    <input type="hidden" name="user_id" value="${Maindto.user_id}"/>
+                <form action="myPage" method="get" id="myPageForm">
+<!--                <a href="myPage?user_id=${user_id}">${user_id}마이페이지</a>-->
+                    <input type="hidden" name="user_id" value="${user_id}"/>
 <!--                    <a type="button" onclick="document.getElementById('myPageForm').submit();">마이페이지</a>-->
-					<a href="myPage?user_id=${user_id}">${Maindto.user_id}마이페이지</a>
+					<a href="myPage?user_id=${user_id}">${user_id}마이페이지</a>
+					<input type="submit" value="마이페이지">
+						
                 </form>
                 <a href="login">로그아웃</a>
             </li>

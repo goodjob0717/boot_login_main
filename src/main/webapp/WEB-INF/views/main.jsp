@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ include file="header.jsp" %>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -83,6 +82,7 @@
 </style>
 </head>
 <body>
+	<%@ include file="header.jsp" %>
     <div id="wrap">
         <h1>구인구직 홈페이지</h1>
         <!-- 여기에 콘텐츠 추가 -->

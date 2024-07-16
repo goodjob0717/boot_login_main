@@ -23,8 +23,8 @@ import lombok.extern.slf4j.Slf4j;
 @Controller
 public class MainController {
 	
-	@Autowired
-	private CompanyListService companyListService;
+//	@Autowired
+//	private CompanyListService companyListService;
 
 	@Autowired
 	private EmpPostService empPostService; 
